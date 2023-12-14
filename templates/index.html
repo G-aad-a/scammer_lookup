@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scammer lookup</title>
+    <style> 
+        h2 {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif; 
+        }
+    </style>
+</head>
+<body>
+
+    <h2>https://discord.gg/Yrp8NWpEnq</h2>
+    <p>Skriv et discord id eller telefonnummer og tryk på "Search". For at tilfølge scammers så skriv til <b>jegtisserisandkasser</b> på discord :) </p>
+    <input type="text" name="data" id="data">
+    <button id="btn">Search</button>
+</body>
+
+<script>
+    document.getElementById("btn").addEventListener("click", function(){
+        var data = document.getElementById("data").value;
+        var url = `http://${document.domain}/lookup/${data}`;
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url);
+        xhr.send();
+        xhr.onload = function(){
+            if(xhr.status == 200){
+                var response = xhr.responseText;
+                alert("Response: " + response)
+            }
+        }
+    });
+</script>
+</html>
