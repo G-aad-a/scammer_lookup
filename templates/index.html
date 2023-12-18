@@ -52,7 +52,7 @@
 <script>
     document.getElementById("btn").addEventListener("click", function(){
         var data = document.getElementById("data").value;
-        var url = `http://${document.domain}/lookup/${data}`;
+        var url = `https://${document.domain}/lookup/${data}`;
         var xhr = new XMLHttpRequest();
         xhr.open("GET", url);
         xhr.send();
